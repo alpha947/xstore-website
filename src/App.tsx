@@ -1,0 +1,116 @@
+// src/App.tsx
+import React, { useState } from 'react';
+import { CheckCircle } from 'lucide-react';
+import { Header } from './components/Header';
+import { Hero } from './components/Hero';
+import { PartnersMap } from './components/PartnersMap';
+import { DemoModal } from './components/DemoModal';
+import { PlatformSection } from './components/PlatformSection';
+import { FeaturesSection } from './components/FeaturesSection';
+import { ServicesSection } from './components/ServicesSection';
+import { ContactSection } from './components/ContactSection';
+import { NewsletterSection } from './components/NewsletterSection';
+import { Footer } from './components/Footer';
+import { WhyChooseUsSection } from './components/WhyChooseUsSection';
+import { TestimonialsSection } from './components/TestimonialsSection';
+
+interface DemoRequestForm {
+  numeroboutique: string;
+  nomboutique: string;
+  typeboutique: string;
+  Adresse: string;
+  contact: string;
+  email: string;
+  whatsapp: string;
+}
+
+function App() {
+  const [email, setEmail] = useState('');
+  const [subscribed, setSubscribed] = useState(false);
+  const [showDemoForm, setShowDemoForm] = useState(false);
+  const [demoForm, setDemoForm] = useState<DemoRequestForm>({
+    numeroboutique: '',
+    nomboutique: '',
+    typeboutique: '',
+    Adresse: '',
+    contact: '',
+    email: '',
+    whatsapp: ''
+  });
+  const [demoSubmitted, setDemoSubmitted] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
+
+  const handleDemoSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setDemoSubmitted(true);
+    setShowDemoForm(false);
+    setTimeout(() => {
+      setDemoSubmitted(false);
+      setDemoForm({
+        numeroboutique: '',
+        nomboutique: '',
+        typeboutique: '',
+        Adresse: '',
+        contact: '',
+        email: '',
+        whatsapp: ''
+      });
+    }, 3000); // Animation de 3 secondes
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-green-50 to-white font-sans">
+      <Header 
+        setActiveSection={setActiveSection}
+        activeSection={activeSection}
+        setShowDemoForm={setShowDemoForm}
+      />
+      
+      {activeSection === 'features' ? (
+        <FeaturesSection />
+      ) : activeSection === 'partners' ? (
+        <PartnersMap />
+      ) : (
+        <>
+          <Hero setShowDemoForm={setShowDemoForm} />
+          <WhyChooseUsSection />
+          <PlatformSection />
+          <TestimonialsSection />
+          <ServicesSection />
+          <ContactSection />
+          <NewsletterSection 
+            email={email}
+            setEmail={setEmail}
+            subscribed={subscribed}
+            setSubscribed={setSubscribed}
+          />
+          <Footer />
+        </>
+      )}
+
+      <DemoModal
+        showDemoForm={showDemoForm}
+        setShowDemoForm={setShowDemoForm}
+        demoForm={demoForm}
+        setDemoForm={setDemoForm}
+        handleDemoSubmit={handleDemoSubmit}
+      />
+
+      {demoSubmitted && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 px-4">
+          <div className="bg-white p-6 rounded-xl shadow-2xl flex flex-col items-center gap-4 animate-success">
+            <CheckCircle className="h-12 w-12 text-green-600" />
+            <p className="text-lg font-semibold text-gray-900 text-center">
+              Demande envoyée avec succès !
+            </p>
+            <p className="text-sm text-gray-600 text-center">
+              Notre équipe vous contactera sous 24h.
+            </p>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default App;
