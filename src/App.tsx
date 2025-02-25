@@ -10,9 +10,9 @@ import { FeaturesSection } from './components/FeaturesSection';
 import { ServicesSection } from './components/ServicesSection';
 import { ContactSection } from './components/ContactSection';
 import { NewsletterSection } from './components/NewsletterSection';
-import { Footer } from './components/Footer';
-import { WhyChooseUsSection } from './components/WhyChooseUsSection';
+import { Footer } from './components/Footer'; 
 import { TestimonialsSection } from './components/TestimonialsSection';
+import { TutorialsSection } from './components/TutorialsSection'; 
 
 interface DemoRequestForm {
   numeroboutique: string;
@@ -98,11 +98,11 @@ function App() {
         <PartnersMap />
       ) : (
         <>
-          <Hero setShowDemoForm={setShowDemoForm} />
-          <WhyChooseUsSection />
+          <Hero setShowDemoForm={setShowDemoForm} /> 
           <PlatformSection />
           <TestimonialsSection />
           <ServicesSection />
+          <TutorialsSection />          
           <ContactSection />
           <NewsletterSection 
             email={email}
