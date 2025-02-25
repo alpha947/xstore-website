@@ -1,6 +1,6 @@
 // src/App.tsx
-import React, { useState } from 'react';
-import { CheckCircle } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { CheckCircle, DownloadCloud } from 'lucide-react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { PartnersMap } from './components/PartnersMap';
@@ -40,6 +40,33 @@ function App() {
   const [demoSubmitted, setDemoSubmitted] = useState(false);
   const [activeSection, setActiveSection] = useState('');
 
+  // PWA Installation logic
+  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
+  const [showInstallButton, setShowInstallButton] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      setDeferredPrompt(e);
+      setShowInstallButton(true); // Show the install button when available
+    });
+  }, []);
+
+  const handleInstallClick = () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then((choiceResult: any) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('PWA installed successfully!');
+        } else {
+          console.log('PWA installation declined');
+        }
+        setDeferredPrompt(null);
+        setShowInstallButton(false);
+      });
+    }
+  };
+
   const handleDemoSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setDemoSubmitted(true);
@@ -65,7 +92,7 @@ function App() {
         activeSection={activeSection}
         setShowDemoForm={setShowDemoForm}
       />
-      
+
       {activeSection === 'features' ? (
         <FeaturesSection />
       ) : activeSection === 'partners' ? (
@@ -107,6 +134,18 @@ function App() {
               Notre équipe vous contactera sous 24h.
             </p>
           </div>
+        </div>
+      )}
+
+      {showInstallButton && (
+        <div className="fixed bottom-4 right-4 z-50">
+          <button
+            onClick={handleInstallClick}
+            className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-blue-700 transition"
+          >
+            <DownloadCloud className="h-5 w-5" />
+            Installer l'application
+          </button>
         </div>
       )}
     </div>
