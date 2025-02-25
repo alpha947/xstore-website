@@ -40,7 +40,6 @@ function App() {
   const [demoSubmitted, setDemoSubmitted] = useState(false);
   const [activeSection, setActiveSection] = useState('');
 
-  // PWA Installation logic
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const [showInstallButton, setShowInstallButton] = useState(false);
 
@@ -48,7 +47,7 @@ function App() {
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
       setDeferredPrompt(e);
-      setShowInstallButton(true); // Show the install button when available
+      setShowInstallButton(true);
     });
   }, []);
 
@@ -82,7 +81,7 @@ function App() {
         email: '',
         whatsapp: ''
       });
-    }, 3000); // Animation de 3 secondes
+    }, 3000);
   };
 
   return (

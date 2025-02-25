@@ -8,9 +8,9 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       manifest: {
-        name: 'Mon Application',
+        name: 'xstore',
         short_name: 'App',
-        description: 'Une application PWA React avec Vite',
+        description: 'Gestion de stock connecté',
         theme_color: '#ffffff',
         background_color: '#ffffff',
         display: 'standalone',
@@ -51,7 +51,7 @@ export default defineConfig({
         ],
       },
       devOptions: {
-        enabled: true, // Active le PWA en mode dev
+        enabled: false, // Active le PWA en mode dev
       },
     }),
   ],

@@ -41,7 +41,7 @@ export function DemoModal({
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center px-4 py-6 z-50">
       <div className="bg-white rounded-xl p-6 w-full max-w-md max-h-[90vh] overflow-y-auto shadow-2xl">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Demande de démonstration</h2>
+        <h3 className="text-xl text-gray-900 mb-6 text-center">Demande de démonstration</h3>
         <form onSubmit={handleDemoSubmit} className="space-y-4">
           {/* Numéro Boutique */}
           <div className="flex items-center gap-3">
