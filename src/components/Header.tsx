@@ -14,11 +14,19 @@ export function Header({ setActiveSection, activeSection, setShowDemoForm }: Hea
   return (
     <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50 px-4 py-4 md:px-6 md:py-6">
       <nav className="flex justify-between items-center max-w-screen-xl mx-auto">
-        {/* Logo */}
-        <div className="flex items-center space-x-2">
-          <Store className="h-6 w-6 md:h-8 md:w-8 text-green-600" />
-          <span className="text-xl md:text-2xl font-bold text-gray-900">XStore</span>
-        </div>
+        {/* Logo */}      
+        <button 
+          onClick={() => setActiveSection('')}
+          className={`text-base font-medium hover:text-green-600 transition ${activeSection === '' ? 'text-green-600' : 'text-gray-600'}`}
+        >
+          <div className="flex items-center space-x-2">
+            <Store className="h-6 w-6 md:h-8 md:w-8 text-green-600" />
+            <span className="text-xl md:text-2xl font-bold text-gray-900">Xstore</span>
+          </div>
+        </button>
+
+        
+        
 
         {/* Bouton Hamburger (mobile uniquement) */}
         <div className="md:hidden">

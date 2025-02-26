@@ -61,7 +61,7 @@ export function FeaturesSection() {
                 ]
               },
               {
-                title: '4. Gestion des Ressources Humaines',
+                title: '4. Gestion RH',
                 key: 'rh',
                 features: [
                   { icon: <Users className="h-10 w-10 text-lime-500" />, title: "Gestion des personnes", description: "Employés, utilisateurs, clients et fournisseurs sous contrôle." },

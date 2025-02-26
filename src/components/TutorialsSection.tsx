@@ -26,13 +26,7 @@ const tutorials = [
     description: "Effectuez des ventes et suivez les transactions",
     thumbnail: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     link: "https://www.youtube.com/watch?v=5"
-  },
-  {
-    title: "Suivi des achats",
-    description: "Gérez vos achats et fournisseurs",
-    thumbnail: "https://images.unsplash.com/photo-1573164574233-1f97c1d9f2d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    link: "https://www.youtube.com/watch?v=6"
-  },
+  }, 
   {
     title: "Rapports et statistiques",
     description: "Créez des rapports détaillés sur vos activités",

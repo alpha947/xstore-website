@@ -28,7 +28,7 @@ export function NewsletterSection({ email, setEmail, subscribed, setSubscribed }
         {subscribed ? (
           <div className="flex items-center justify-center space-x-2 text-green-600">
             <CheckCircle className="h-5 w-5" />
-            <span>Merci de votre inscription !</span>
+            <span>Merci, nous vous reviendrons plus tard !</span>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
