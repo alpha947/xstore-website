@@ -6,7 +6,7 @@ export function PlatformSection() {
   return (
     <section className="py-8 md:py-12 bg-white">
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-xl md:text-3xl font-bold text-center mb-6 md:mb-10">Disponible sur Mobile et Desktop</h2>
+        <h2 className="text-xl md:text-3xl  text-center mb-6 md:mb-10">Disponible sur Mobile et Desktop</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           <div className="text-center p-4 md:p-6 border rounded-lg shadow-md">
             <div className="flex justify-center mb-3 md:mb-4">

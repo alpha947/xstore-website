@@ -6,12 +6,10 @@ import { Hero } from './components/Hero';
 import { PartnersMap } from './components/PartnersMap';
 import { DemoModal } from './components/DemoModal';
 import { PlatformSection } from './components/PlatformSection';
-import { FeaturesSection } from './components/FeaturesSection';
-import { ServicesSection } from './components/ServicesSection';
+import { FeaturesSection } from './components/FeaturesSection'; 
 import { ContactSection } from './components/ContactSection';
 import { NewsletterSection } from './components/NewsletterSection';
-import { Footer } from './components/Footer'; 
-import { TestimonialsSection } from './components/TestimonialsSection';
+import { Footer } from './components/Footer';  
 import { TutorialsSection } from './components/TutorialsSection'; 
 
 interface DemoRequestForm {
@@ -99,9 +97,7 @@ function App() {
       ) : (
         <>
           <Hero setShowDemoForm={setShowDemoForm} /> 
-          <PlatformSection />
-          <TestimonialsSection />
-          <ServicesSection />
+          <PlatformSection /> 
           <TutorialsSection />          
           <ContactSection />
           <NewsletterSection 

@@ -12,9 +12,10 @@ export function Hero({ setShowDemoForm }: HeroProps) {
       <div className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-16 items-center">
         {/* Texte */}
         <div className="space-y-4 text-center md:text-left">
-          <h1 className="text-2xl md:text-5xl lg:text-6xl text-gray-900 leading-tight">
+          <h2 className="text-xl md:text-5xl lg:text-6xl  text-center mb-6 leading-tight md:mb-10">  
             Connectez vos boutiques avec <span className="text-green-600 font-extrabold tracking-wide">XStore</span>
-          </h1>
+          </h2>
+     
         </div>
 
         {/* Image */}
@@ -28,8 +29,8 @@ export function Hero({ setShowDemoForm }: HeroProps) {
             <div className="flex items-center gap-1">
               <Shield className="h-5 w-5 md:h-8 md:w-8 text-green-600" />
               <div>
-                <p className="font-semibold text-sm md:text-base text-gray-900">Automatisation</p>
-                <p className="text-xs md:text-sm text-gray-600">Temps réel</p>
+                <p className="font-semibold text-sm md:text-base text-gray-900">Automatisatisez vos activités</p>
+                <p className="text-xs md:text-sm text-gray-600">En temps réel</p>
               </div>
             </div>
           </div> 

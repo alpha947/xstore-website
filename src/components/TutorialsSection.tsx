@@ -17,7 +17,9 @@ export function TutorialsSection() {
   return (
     <section id="tutorials" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-16">Découvrez XStore en action</h2>
+        <h2 className="text-xl md:text-3xl  text-center leading-tight md:mb-10">  
+            Quelques tutos<span className="text-green-600 font-extrabold tracking-wide"> xstore</span>
+        </h2>
         <Swiper
           modules={[Navigation, Pagination]}
           spaceBetween={30}
