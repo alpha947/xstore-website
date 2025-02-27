@@ -19,11 +19,19 @@ export function Header({ setActiveSection, activeSection, setShowDemoForm }: Hea
           onClick={() => setActiveSection('')}
           className={`text-base font-medium hover:text-green-600 transition ${activeSection === '' ? 'text-green-600' : 'text-gray-600'}`}
         >
-          <div className="flex items-center space-x-2">
+          {/* <div className="flex items-center space-x-2">
             <Store className="h-6 w-6 md:h-8 md:w-8 text-green-600" />
             <span className="text-xl md:text-2xl font-bold text-gray-900">Xstore</span>
-          </div>
-        </button>
+          </div> */}
+          <div className="flex items-center space-x-2">
+              <img 
+                    src="icon.png" // Remplace par l'URL ou le chemin de l'image générée
+                    alt="Xstore" 
+                    className="h-10 w-10 md:h-8 md:w-8"  
+              />
+              <span className="text-xl md:text-2xl font-bold text-gray-900">Xstore</span>
+            </div>
+          </button>
 
         
         
