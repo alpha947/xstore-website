@@ -27,7 +27,7 @@ export function Header({ setActiveSection, activeSection, setShowDemoForm }: Hea
               <img 
                     src="icon.png" // Remplace par l'URL ou le chemin de l'image générée
                     alt="Xstore" 
-                    className="h-10 w-10 md:h-8 md:w-8"  
+                    className="h-9 w-9 md:h-6 md:w-6"  
               />
               <span className="text-xl md:text-2xl font-bold text-gray-900">Xstore</span>
             </div>
