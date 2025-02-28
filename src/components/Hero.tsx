@@ -28,7 +28,7 @@ export function Hero({ setShowDemoForm }: HeroProps) {
           <img 
             src="guinee.jpeg" // Remplacez par l'image du drapeau
             alt="Drapeau de la Guinée"
-            className="absolute top-2 right-2 w-8 h-5 md:w-10 md:h-6 rounded-sm shadow-md"
+            className="absolute top-2 right-2 w-8 h-5 md:w-10 md:h-6   rounded-sm shadow-md"
           />
           <div className="absolute -bottom-4 left-2 md:-bottom-8 md:-left-8 bg-white p-2 md:p-4 rounded-lg shadow-xl border border-gray-100">
             <div className="flex items-center gap-1">

@@ -1,4 +1,3 @@
-// src/components/Header.tsx
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
@@ -12,7 +11,7 @@ export function Header({ setActiveSection, activeSection, setShowDemoForm }: Hea
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-[#F0F2F5] bg-opacity-95 shadow-sm z-30 px-4 py-3 md:py-4">
+    <header className="fixed top-0 left-0 w-full bg-[#F0F2F5] md:bg-[rgba(240,242,245,0.8)] md:backdrop-blur-custom shadow-sm z-20 px-4 py-2 md:py-4">
       <nav className="flex justify-between items-center max-w-screen-xl mx-auto">
         {/* Logo (WhatsApp-like à gauche) */}
         <button 
@@ -22,9 +21,9 @@ export function Header({ setActiveSection, activeSection, setShowDemoForm }: Hea
           <img 
             src="icon.png" // Remplacez par le chemin réel de votre logo
             alt="XStore Logo" 
-            className="h-15 w-15 md:h-12 md:w-12 object-contain" // Plus grand sur desktop
+            className="h-10 w-10 md:h-12 md:w-12 object-contain" // Plus grand sur desktop
           />
-          <span className="text-lg md:text-2xl font-semibold">XStore</span>
+          <span className="text-lg md:text-2xl font-semibold">Xstore</span>
         </button>
 
         {/* Bouton Hamburger (mobile uniquement) */}
