@@ -1,56 +1,16 @@
 // src/components/ClientsSection.tsx
 import React, { useState } from 'react';
-import { Search, MapPin, Phone, Store } from 'lucide-react';
+import { Search, MapPin, Store, EyeOff, Map } from 'lucide-react';
 
 const clientsData = [
-  // Conakry
-  { region: 'Conakry', owner: 'Mamadou Diallo', store: 'Boutique A', phone: '+224 620 123 456' },
-  { region: 'Conakry', owner: 'Alpha Barry', store: 'Boutique B', phone: '+224 624 987 321' },
-  { region: 'Conakry', owner: 'Fatou Bangoura', store: 'Boutique C', phone: '+224 620 111 222' },
-  { region: 'Conakry', owner: 'Ibrahima Camara', store: 'Boutique D', phone: '+224 620 333 444' },
-  { region: 'Conakry', owner: 'Aminata Sylla', store: 'Boutique E', phone: '+224 620 555 666' },
-
-  // Kindia
-  { region: 'Kindia', owner: 'Aissata Bah', store: 'Boutique F', phone: '+224 621 654 321' },
-  { region: 'Kindia', owner: 'Mariama Conde', store: 'Boutique G', phone: '+224 625 321 987' },
-  { region: 'Kindia', owner: 'Ousmane Diallo', store: 'Boutique H', phone: '+224 621 777 888' },
-  { region: 'Kindia', owner: 'Fatou Camara', store: 'Boutique I', phone: '+224 621 999 000' },
-  { region: 'Kindia', owner: 'Sory Sylla', store: 'Boutique J', phone: '+224 621 444 555' },
-
-  // Labé
-  { region: 'Labé', owner: 'Ibrahima Sylla', store: 'Boutique K', phone: '+224 622 789 654' },
-  { region: 'Labé', owner: 'Kadiatou Diallo', store: 'Boutique L', phone: '+224 622 666 777' },
-  { region: 'Labé', owner: 'Moussa Bah', store: 'Boutique M', phone: '+224 622 888 999' },
-  { region: 'Labé', owner: 'Aissatou Barry', store: 'Boutique N', phone: '+224 622 123 234' },
-  { region: 'Labé', owner: 'Alpha Camara', store: 'Boutique O', phone: '+224 622 345 456' },
-
-  // Kankan
-  { region: 'Kankan', owner: 'Fatoumata Camara', store: 'Boutique P', phone: '+224 623 456 789' },
-  { region: 'Kankan', owner: 'Ibrahima Keita', store: 'Boutique Q', phone: '+224 623 111 222' },
-  { region: 'Kankan', owner: 'Mamadou Bah', store: 'Boutique R', phone: '+224 623 333 444' },
-  { region: 'Kankan', owner: 'Aminata Diallo', store: 'Boutique S', phone: '+224 623 555 666' },
-  { region: 'Kankan', owner: 'Oumar Sylla', store: 'Boutique T', phone: '+224 623 777 888' },
-
-  // Faranah
-  { region: 'Faranah', owner: 'Moussa Camara', store: 'Boutique U', phone: '+224 624 123 456' },
-  { region: 'Faranah', owner: 'Fatou Diallo', store: 'Boutique V', phone: '+224 624 654 321' },
-  { region: 'Faranah', owner: 'Ibrahima Bah', store: 'Boutique W', phone: '+224 624 789 654' },
-  { region: 'Faranah', owner: 'Aissata Keita', store: 'Boutique X', phone: '+224 624 456 789' },
-  { region: 'Faranah', owner: 'Alpha Sylla', store: 'Boutique Y', phone: '+224 624 987 321' },
-
-  // Zerekore
-  { region: 'Zerekore', owner: 'Kadiatou Bah', store: 'Boutique Z', phone: '+224 625 123 456' },
-  { region: 'Zerekore', owner: 'Ibrahima Diallo', store: 'Boutique AA', phone: '+224 625 654 321' },
-  { region: 'Zerekore', owner: 'Fatoumata Keita', store: 'Boutique AB', phone: '+224 625 789 654' },
-  { region: 'Zerekore', owner: 'Ousmane Camara', store: 'Boutique AC', phone: '+224 625 456 789' },
-  { region: 'Zerekore', owner: 'Mamadou Sylla', store: 'Boutique AD', phone: '+224 625 987 321' },
-
-  // Mamou
-  { region: 'Mamou', owner: 'Alpha Bah', store: 'Boutique AE', phone: '+224 626 123 456' },
-  { region: 'Mamou', owner: 'Aminata Diallo', store: 'Boutique AF', phone: '+224 626 654 321' },
-  { region: 'Mamou', owner: 'Moussa Sylla', store: 'Boutique AG', phone: '+224 626 789 654' },
-  { region: 'Mamou', owner: 'Fatou Camara', store: 'Boutique AH', phone: '+224 626 456 789' },
-  { region: 'Mamou', owner: 'Ibrahima Barry', store: 'Boutique AI', phone: '+224 626 987 321' },
+  { region: 'Conakry', owner: 'Mamadou Diallo', store: 'Boutique A', address: 'Rue 123, Kaloum', type: 'Alimentation générale' },
+  { region: 'Conakry', owner: 'Alpha Barry', store: 'Boutique B', address: 'Avenue 456, Dixinn', type: 'Electronique' },
+  { region: 'Kindia', owner: 'Aissata Bah', store: 'Boutique F', address: 'Marché central, Kindia', type: 'Légumes' },
+  { region: 'Labé', owner: 'Ibrahima Sylla', store: 'Boutique K', address: 'Quartier Tata, Labé', type: 'Chaussures' },
+  { region: 'Kankan', owner: 'Fatoumata Camara', store: 'Boutique P', address: 'Route Nationale, Kankan', type: 'Habits' },
+  { region: 'Faranah', owner: 'Moussa Camara', store: 'Boutique U', address: 'Centre-ville, Faranah', type: 'Electroménager' },
+  { region: 'Zerekore', owner: 'Kadiatou Bah', store: 'Boutique Z', address: 'Marché central, Zerekore', type: 'Jus' },
+  { region: 'Mamou', owner: 'Alpha Bah', store: 'Boutique AE', address: 'Rue du Commerce, Mamou', type: 'Alimentation générale' },
 ];
 
 export function PartnersMap() {
@@ -58,6 +18,7 @@ export function PartnersMap() {
   const [selectedRegion, setSelectedRegion] = useState('');
 
   const regions = [...new Set(clientsData.map(client => client.region))];
+  const totalClients = clientsData.length;
 
   const filteredClients = clientsData.filter(client =>
     (client.owner.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -65,40 +26,30 @@ export function PartnersMap() {
     (selectedRegion ? client.region === selectedRegion : true)
   );
 
-  const groupedByRegion = filteredClients.reduce((acc, client) => {
-    if (!acc[client.region]) acc[client.region] = [];
-    acc[client.region].push(client);
-    return acc;
-  }, {} as { [key: string]: typeof clientsData });
-
-  const totalClients = filteredClients.length;
-
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-6">
+    <section className="py-24 md:py-32 bg-gray-50 min-h-screen">
+      <div className="container mx-auto px-6 md:px-12">
         <h2 className="text-xl md:text-3xl text-center leading-tight mb-6">
-          Liste des <span className="text-green-600 font-extrabold tracking-wide">Clients</span>
+          Nos Clients ({totalClients})
         </h2>
 
-        <p className="text-center text-gray-700 mb-4">Total des clients : {totalClients}</p>
-
-        {/* Search Bar and Region Filter */}
-        <div className="flex items-center gap-4 mb-8 max-w-2xl mx-auto">
-          <div className="flex items-center gap-2 w-full">
-            <Search className="h-5 w-5 text-gray-500" />
+        {/* Barre de recherche et filtre */}
+        <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center justify-between mb-12">
+          <div className="relative w-full md:w-1/2">
+            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500" />
             <input
               type="text"
-              placeholder="Rechercher par nom..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:outline-none"
+              placeholder="Rechercher un client..."
+              className="w-full bg-white pl-12 pr-4 py-3 rounded-full shadow-md text-sm md:text-base focus:ring-2 focus:ring-green-500 focus:outline-none"
             />
           </div>
-          <div>
+          <div className="relative">
             <select
               value={selectedRegion}
               onChange={(e) => setSelectedRegion(e.target.value)}
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:outline-none"
+              className="bg-white pl-4 pr-4 py-3 rounded-full shadow-md text-sm md:text-base focus:ring-2 focus:ring-green-500 focus:outline-none"
             >
               <option value="">Toutes les régions</option>
               {regions.map(region => (
@@ -108,29 +59,25 @@ export function PartnersMap() {
           </div>
         </div>
 
-        {/* Clients List */}
-        {Object.keys(groupedByRegion).map(region => (
-          <div key={region} className="mb-10">
-            <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
-              <MapPin className="h-5 w-5 text-green-600" /> {region}
-            </h3>
-            <div className="space-y-4">
-              {groupedByRegion[region].map((client, idx) => (
-                <div key={idx} className="bg-white rounded-lg shadow-md p-4 flex items-center gap-4">
-                  <Store className="h-10 w-10 text-green-600" />
-                  <div>
-                    <h4 className="text-lg font-semibold">{client.owner}</h4>
-                    <p className="text-gray-600">{client.store}</p>
-                    <div className="flex items-center gap-2 mt-1">
-                      <Phone className="h-4 w-4 text-gray-500" />
-                      <span>{client.phone}</span>
-                    </div>
-                  </div>
+        {/* Affichage des clients */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredClients.map((client, idx) => (
+            <div key={idx} className="bg-white rounded-lg shadow-lg p-5 flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-4">
+              <Store className="h-12 w-12 text-green-600" />
+              <div className="flex-1">
+                <h3 className="text-lg font-semibold text-gray-900">{client.owner}</h3>
+                <p className="text-gray-600 font-medium">{client.store} ({client.type})</p>
+                <p className="text-gray-500 text-sm flex items-center gap-2 mt-1">
+                  <Map className="h-4 w-4 text-gray-400" /> {client.address}
+                </p>
+                <div className="mt-2 flex items-center text-gray-500">
+                  <EyeOff className="h-5 w-5 mr-2" />
+                  <span>Contact masqué</span>
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

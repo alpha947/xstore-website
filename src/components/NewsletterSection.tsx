@@ -21,10 +21,7 @@ export function NewsletterSection({ email, setEmail, subscribed, setSubscribed }
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-6 max-w-2xl text-center">
-        <h2 className="text-3xl font-bold mb-8">Restez informé</h2>
-        <p className="text-gray-600 mb-8">
-          Recevez nos actualités et découvrez nos nouvelles fonctionnalités
-        </p>
+        <h2 className="text-3xl mb-8">Restez informé</h2>
         {subscribed ? (
           <div className="flex items-center justify-center space-x-2 text-green-600">
             <CheckCircle className="h-5 w-5" />

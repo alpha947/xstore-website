@@ -1,6 +1,6 @@
 // src/components/Header.tsx
 import React, { useState } from 'react';
-import { Store, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 interface HeaderProps {
   setActiveSection: (section: string) => void;
@@ -12,29 +12,20 @@ export function Header({ setActiveSection, activeSection, setShowDemoForm }: Hea
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50 px-4 py-4 md:px-6 md:py-6">
+    <header className="fixed top-0 left-0 w-full bg-[#F0F2F5] bg-opacity-95 shadow-sm z-30 px-4 py-3 md:py-4">
       <nav className="flex justify-between items-center max-w-screen-xl mx-auto">
-        {/* Logo */}      
+        {/* Logo (WhatsApp-like à gauche) */}
         <button 
           onClick={() => setActiveSection('')}
-          className={`text-base font-medium hover:text-green-600 transition ${activeSection === '' ? 'text-green-600' : 'text-gray-600'}`}
+          className="flex items-center space-x-2 text-gray-800 hover:text-green-600 transition"
         >
-          {/* <div className="flex items-center space-x-2">
-            <Store className="h-6 w-6 md:h-8 md:w-8 text-green-600" />
-            <span className="text-xl md:text-2xl font-bold text-gray-900">Xstore</span>
-          </div> */}
-          <div className="flex items-center space-x-2">
-              <img 
-                    src="icon.png" // Remplace par l'URL ou le chemin de l'image générée
-                    alt="Xstore" 
-                    className="h-9 w-9 md:h-6 md:w-6"  
-              />
-              <span className="text-xl md:text-2xl font-bold text-gray-900">Xstore</span>
-            </div>
-          </button>
-
-        
-        
+          <img 
+            src="icon.png" // Remplacez par le chemin réel de votre logo
+            alt="XStore Logo" 
+            className="h-15 w-15 md:h-12 md:w-12 object-contain" // Plus grand sur desktop
+          />
+          <span className="text-lg md:text-2xl font-semibold">XStore</span>
+        </button>
 
         {/* Bouton Hamburger (mobile uniquement) */}
         <div className="md:hidden">
@@ -43,29 +34,35 @@ export function Header({ setActiveSection, activeSection, setShowDemoForm }: Hea
           </button>
         </div>
 
-        {/* Menu Desktop */}
-        <div className="hidden md:flex items-center space-x-6">
+        {/* Menu Desktop (WhatsApp-like avec onglets) */}
+        <div className="hidden md:flex items-center space-x-6 bg-white bg-opacity-95 rounded-full shadow-md px-6 py-3">
           <button 
             onClick={() => setActiveSection('')}
-            className={`text-base font-medium hover:text-green-600 transition ${activeSection === '' ? 'text-green-600 border-b-2 border-green-600' : 'text-gray-600'}`}
+            className={`px-5 py-3 text-base font-medium rounded-full transition ${activeSection === '' ? 'bg-green-100 text-green-600' : 'text-gray-600 hover:bg-gray-200'}`}
           >
             Accueil
           </button>
           <button 
             onClick={() => setActiveSection('features')}
-            className={`text-base font-medium hover:text-green-600 transition ${activeSection === 'features' ? 'text-green-600 border-b-2 border-green-600' : 'text-gray-600'}`}
+            className={`px-5 py-3 text-base font-medium rounded-full transition ${activeSection === 'features' ? 'bg-green-100 text-green-600' : 'text-gray-600 hover:bg-gray-200'}`}
           >
             Fonctionnalités
           </button>
           <button 
+            onClick={() => setActiveSection('tutorials')}
+            className={`px-5 py-3 text-base font-medium rounded-full transition ${activeSection === 'tutorials' ? 'bg-green-100 text-green-600' : 'text-gray-600 hover:bg-gray-200'}`}
+          >
+            Tutoriels
+          </button>
+          <button 
             onClick={() => setActiveSection('partners')}
-            className={`text-base font-medium hover:text-green-600 transition ${activeSection === 'partners' ? 'text-green-600 border-b-2 border-green-600' : 'text-gray-600'}`}
+            className={`px-5 py-3 text-base font-medium rounded-full transition ${activeSection === 'partners' ? 'bg-green-100 text-green-600' : 'text-gray-600 hover:bg-gray-200'}`}
           >
             Partenaires
           </button>
           <button 
             onClick={() => setShowDemoForm(true)}
-            className="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition font-semibold text-base shadow-md"
+            className="ml-4 bg-green-600 text-white px-8 py-3 rounded-full hover:bg-green-700 transition font-semibold text-base shadow-lg"
           >
             Démarrer
           </button>
@@ -93,6 +90,12 @@ export function Header({ setActiveSection, activeSection, setShowDemoForm }: Hea
             className={`text-xl font-medium hover:text-green-600 transition ${activeSection === 'features' ? 'text-green-600' : 'text-gray-600'}`}
           >
             Fonctionnalités
+          </button>
+          <button 
+            onClick={() => { setActiveSection('tutorials'); setIsMenuOpen(false); }}
+            className={`text-xl font-medium hover:text-green-600 transition ${activeSection === 'tutorials' ? 'text-green-600' : 'text-gray-600'}`}
+          >
+            Tutoriels
           </button>
           <button 
             onClick={() => { setActiveSection('partners'); setIsMenuOpen(false); }}

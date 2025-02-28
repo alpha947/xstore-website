@@ -11,6 +11,7 @@ import { ContactSection } from './components/ContactSection';
 import { NewsletterSection } from './components/NewsletterSection';
 import { Footer } from './components/Footer';  
 import { TutorialsSection } from './components/TutorialsSection'; 
+import { Tutorials } from './components/Tutorials';
 
 interface DemoRequestForm {
   numeroboutique: string;
@@ -92,6 +93,8 @@ function App() {
 
       {activeSection === 'features' ? (
         <FeaturesSection />
+      ) : activeSection === 'tutorials' ? (
+        <Tutorials /> // Ajout de la page Tutoriels
       ) : activeSection === 'partners' ? (
         <PartnersMap />
       ) : (
