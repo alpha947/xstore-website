@@ -23,7 +23,7 @@ export function Header({ setActiveSection, activeSection, setShowDemoForm }: Hea
             alt="XStore Logo" 
             className="h-10 w-10 md:h-12 md:w-12 object-contain" // Plus grand sur desktop
           />
-          <span className="text-lg md:text-2xl font-semibold">Xstore</span>
+          {/* <span className="text-lg md:text-2xl font-semibold">Xstore</span> */}
         </button>
 
         {/* Bouton Hamburger (mobile uniquement) */}
