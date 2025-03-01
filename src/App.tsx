@@ -142,7 +142,7 @@ function App() {
             className="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-green-500 transition"
           >
             <DownloadCloud className="h-5 w-5" />
-            Installer l'application dans votre telephone
+            Installer l'application
           </button>
         </div>
       )}

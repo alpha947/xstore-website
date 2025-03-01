@@ -1,7 +1,7 @@
 {
     "name": "xstore",
-    "short_name": "NomCourt",
-    "description": "Une application native et installable sur tous les appareils.",
+    "short_name": "Service Client",
+    "description": "Le service client de XStore",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",
