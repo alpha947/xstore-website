@@ -9,7 +9,7 @@ export default defineConfig({
       registerType: 'autoUpdate',
       manifest: {
         name: 'xstore',
-        short_name: 'App',
+        short_name: 'Service Client',
         description: 'Gestion de stock connecté',
         theme_color: '#ffffff',
         background_color: '#ffffff',
