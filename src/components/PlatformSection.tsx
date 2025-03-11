@@ -25,7 +25,7 @@ export function PlatformSection() {
               <Monitor className="h-16 w-16 text-green-600" />
             </div>
             <h3 className="text-xl font-semibold mb-2">Application Desktop</h3>
-            <p className="text-gray-600 mb-3 md:mb-4">Accédez à XStore depuis votre navigateur web ou installez-le directement sur votre ordinateur pour une expérience optimale</p>
+            <p className="text-gray-600 mb-3 md:mb-4">Accédez à IStock depuis votre navigateur web ou installez-le directement sur votre ordinateur pour une expérience optimale</p>
             <div className="flex justify-center gap-3 md:gap-4">
               <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-mac-app-store.svg" alt="Download on the Mac App Store" className="h-12" />
               <img src="https://developer.microsoft.com/en-us/store/badges/images/English_get-it-from-MS.png" alt="Download on the Microsoft Store" className="h-12" />

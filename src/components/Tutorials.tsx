@@ -94,7 +94,7 @@
       },
       {
         title: "Pourquoi Choisir XStore : Avantages",
-        description: "Les raisons de choisir XStore.",
+        description: "Les raisons de choisir IStock.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         category: "Pourquoi Choisir XStore",
         thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg",

@@ -20,10 +20,10 @@ export function Header({ setActiveSection, activeSection, setShowDemoForm }: Hea
         >
           <img 
             src="icon.png" // Remplacez par le chemin réel de votre logo
-            alt="XStore Logo" 
+            alt="Istock Logo" 
             className="h-10 w-10 md:h-12 md:w-12 object-contain" // Plus grand sur desktop
           />
-          <span className="text-lg md:text-2xl">Xstore</span>
+          <span className="text-lg md:text-2xl">IStock</span>
         </button>
 
         {/* Bouton Hamburger (mobile uniquement) */}

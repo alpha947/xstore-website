@@ -10,7 +10,7 @@ import 'swiper/css/pagination';
 const tutorials = [
   {
     title: "Présentation générale",
-    description: "Découvrez toutes les fonctionnalités de XStore en 5 minutes",
+    description: "Découvrez toutes les fonctionnalités de IStock en 5 minutes",
     thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     link: "https://www.youtube.com/watch?v=1"
   },
@@ -58,7 +58,7 @@ export function TutorialsSection() {
     <section id="tutorials" className="py-30 bg-gray-50">
       <div className="container mx-auto px-6">
         <h2 className="text-xl md:text-3xl text-center leading-tight md:mb-10">
-          Quelques tutos <span className="text-green-600 font-extrabold tracking-wide">XStore</span>
+          Quelques tutos <span className="text-green-600 font-extrabold tracking-wide">IStock</span>
         </h2>
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
