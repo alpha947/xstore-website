@@ -30,7 +30,7 @@ export function FeaturesSection() {
   return (
     <section className="py-32 bg-white min-h-screen"> {/* Décalage pour éviter l'effet masqué */}
       <div className="container mx-auto px-4">
-        <h4 className="text-xl font-bold text-center mb-12 text-gray-900">Fonctionnalités de xstock</h4>
+        <h4 className="text-xl font-bold text-center mb-12 text-gray-900">Fonctionnalités de Istock</h4>
 
         {/* Accordion Section */}
         {[
