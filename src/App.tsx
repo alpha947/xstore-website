@@ -55,9 +55,9 @@ function App() {
       deferredPrompt.prompt();
       deferredPrompt.userChoice.then((choiceResult: any) => {
         if (choiceResult.outcome === 'accepted') {
-          console.log('PWA installed successfully!');
+          console.log('PWA installee avec succes!');
         } else {
-          console.log('PWA installation declined');
+          console.log('PWA installation annulee');
         }
         setDeferredPrompt(null);
         setShowInstallButton(false);

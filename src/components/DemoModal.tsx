@@ -1,4 +1,6 @@
+// src/components/DemoModal.tsx
 import React from 'react';
+import Select from "react-select";
 import { 
   Store, 
   ShoppingBag, 
@@ -7,8 +9,7 @@ import {
   Phone, 
   Mail, 
   MessageCircle, 
-  CheckCircle,
-  Loader2
+  CheckCircle 
 } from 'lucide-react';
 
 interface DemoRequestForm {
@@ -27,31 +28,47 @@ interface DemoModalProps {
   demoForm: DemoRequestForm;
   setDemoForm: (form: DemoRequestForm) => void;
   handleDemoSubmit: (e: React.FormEvent) => void;
-  isLoading?: boolean;
 }
 
+//La liste des differentes boutiques
+const options = [
+  { value: "electronique", label: "Électronique" },
+  { value: "habits", label: "Habits, chaussures et sacs" },
+  { value: "piecederechange", label: "Pièce de rechange" },
+  { value: "jus", label: "Jus" },
+  { value: "alimentation", label: "Alimentation générale" },
+  { value: "pharmacie", label: "Pharmacie" },
+  { value: "cosmetique", label: "Cosmétiques & Beauté" },
+  { value: "boulangerie", label: "Boulangerie & Pâtisserie" },
+  { value: "informatique", label: "Informatique & Accessoires" },
+  { value: "meubles", label: "Meubles & Décoration" },
+  { value: "quincaillerie", label: "Quincaillerie" },
+  { value: "boisson", label: "Boissons & Spiritueux" },
+  { value: "electromenager", label: "Électroménager" },
+  { value: "papeterie", label: "Papeterie & Fournitures" },
+  { value: "friperie", label: "Friperie" },
+  { value: "sport", label: "Articles de sport" },
+  { value: "bijouterie", label: "Bijouterie & Montres" },
+  { value: "telecom", label: "Téléphonie & Accessoires" },
+  { value: "maroquinerie", label: "Maroquinerie & Bagagerie" },
+  { value: "materiaux", label: "Matériaux de construction" },
+  { value: "agriculture", label: "Produits agricoles" },
+];
 export function DemoModal({ 
   showDemoForm, 
   setShowDemoForm, 
   demoForm, 
   setDemoForm, 
-  handleDemoSubmit,
-  isLoading = false
+  handleDemoSubmit 
 }: DemoModalProps) {
   if (!showDemoForm) return null;
-
-  const isFormValid = () => {
-    return Object.values(demoForm).every(value => value.trim() !== '') &&
-           /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(demoForm.email) &&
-           /^\+?[1-9]\d{1,14}$/.test(demoForm.contact) &&
-           /^\+?[1-9]\d{1,14}$/.test(demoForm.whatsapp);
-  };
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center px-4 py-6 z-50">
       <div className="bg-white rounded-xl p-6 w-full max-w-md max-h-[90vh] overflow-y-auto shadow-2xl">
         <h3 className="text-xl text-gray-900 mb-6 text-center">Demande de démonstration</h3>
         <form onSubmit={handleDemoSubmit} className="space-y-4">
+          {/* Numéro Boutique */}
           <div className="flex items-center gap-3">
             <Store className="h-5 w-5 text-green-600" />
             <input
@@ -61,10 +78,10 @@ export function DemoModal({
               onChange={(e) => setDemoForm({...demoForm, numeroboutique: e.target.value})}
               placeholder="Numéro de la boutique"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:outline-none text-sm"
-              disabled={isLoading}
             />
           </div>
 
+          {/* Nom Boutique */}
           <div className="flex items-center gap-3">
             <ShoppingBag className="h-5 w-5 text-green-600" />
             <input
@@ -74,28 +91,25 @@ export function DemoModal({
               onChange={(e) => setDemoForm({...demoForm, nomboutique: e.target.value})}
               placeholder="Nom de la boutique"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:outline-none text-sm"
-              disabled={isLoading}
             />
           </div>
 
+          {/* Type Boutique (Select) */}
           <div className="flex items-center gap-3">
             <Package className="h-5 w-5 text-green-600" />
-            <select
-              required
-              value={demoForm.typeboutique}
-              onChange={(e) => setDemoForm({...demoForm, typeboutique: e.target.value})}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:outline-none text-sm"
-              disabled={isLoading}
-            >
-              <option value="">Type de boutique</option>
-              <option value="electronique">Électronique</option>
-              <option value="habits">Habits</option>
-              <option value="piecederechange">Pièce de rechange</option>
-              <option value="jus">Jus</option>
-              <option value="alimentation">Alimentation générale</option>
-            </select>
+            <Select
+              options={options}
+              value={options.find(option => option.value === demoForm.typeboutique)}
+              onChange={(selectedOption) =>
+                setDemoForm({ ...demoForm, typeboutique: selectedOption ? selectedOption.value : '' })
+              }
+              placeholder="Type de boutique"
+              className="w-full text-sm"
+              classNamePrefix="react-select"
+            />
           </div>
 
+          {/* Adresse */}
           <div className="flex items-center gap-3">
             <MapPin className="h-5 w-5 text-green-600" />
             <input
@@ -105,10 +119,10 @@ export function DemoModal({
               onChange={(e) => setDemoForm({...demoForm, Adresse: e.target.value})}
               placeholder="Adresse"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:outline-none text-sm"
-              disabled={isLoading}
             />
           </div>
 
+          {/* Contact */}
           <div className="flex items-center gap-3">
             <Phone className="h-5 w-5 text-green-600" />
             <input
@@ -116,12 +130,12 @@ export function DemoModal({
               required
               value={demoForm.contact}
               onChange={(e) => setDemoForm({...demoForm, contact: e.target.value})}
-              placeholder="Numéro de téléphone (ex: +1234567890)"
+              placeholder="Numéro de téléphone"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:outline-none text-sm"
-              disabled={isLoading}
             />
           </div>
 
+          {/* Email */}
           <div className="flex items-center gap-3">
             <Mail className="h-5 w-5 text-green-600" />
             <input
@@ -131,10 +145,10 @@ export function DemoModal({
               onChange={(e) => setDemoForm({...demoForm, email: e.target.value})}
               placeholder="Email"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:outline-none text-sm"
-              disabled={isLoading}
             />
           </div>
 
+          {/* WhatsApp */}
           <div className="flex items-center gap-3">
             <MessageCircle className="h-5 w-5 text-green-600" />
             <input
@@ -142,38 +156,23 @@ export function DemoModal({
               required
               value={demoForm.whatsapp}
               onChange={(e) => setDemoForm({...demoForm, whatsapp: e.target.value})}
-              placeholder="Numéro WhatsApp (ex: +1234567890)"
+              placeholder="Numéro WhatsApp"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:outline-none text-sm"
-              disabled={isLoading}
             />
           </div>
 
+          {/* Boutons */}
           <div className="flex flex-col md:flex-row gap-4 pt-4">
             <button
               type="submit"
-              disabled={isLoading || !isFormValid()}
-              className={`w-full py-3 rounded-lg font-semibold text-base shadow-md transition ${
-                isLoading || !isFormValid()
-                  ? 'bg-gray-400 text-gray-700 cursor-not-allowed'
-                  : 'bg-green-600 text-white hover:bg-green-700'
-              }`}
+              className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition font-semibold text-base shadow-md"
             >
-              {isLoading ? (
-                <div className="flex items-center justify-center gap-2">
-                  <Loader2 className="h-5 w-5 animate-spin" />
-                  Envoi...
-                </div>
-              ) : (
-                'Envoyer'
-              )}
+              Envoyer
             </button>
             <button
               type="button"
               onClick={() => setShowDemoForm(false)}
-              disabled={isLoading}
-              className={`w-full bg-gray-200 text-gray-700 py-3 rounded-lg hover:bg-gray-300 transition font-semibold text-base shadow-md ${
-                isLoading ? 'cursor-not-allowed opacity-50' : ''
-              }`}
+              className="w-full bg-gray-200 text-gray-700 py-3 rounded-lg hover:bg-gray-300 transition font-semibold text-base"
             >
               Annuler
             </button>
@@ -183,166 +182,3 @@ export function DemoModal({
     </div>
   );
 }
-
-// // src/components/DemoModal.tsx
-// import React from 'react';
-// import { 
-//   Store, 
-//   ShoppingBag, 
-//   Package, 
-//   MapPin, 
-//   Phone, 
-//   Mail, 
-//   MessageCircle, 
-//   CheckCircle 
-// } from 'lucide-react';
-
-// interface DemoRequestForm {
-//   numeroboutique: string;
-//   nomboutique: string;
-//   typeboutique: string;
-//   Adresse: string;
-//   contact: string;
-//   email: string;
-//   whatsapp: string;
-// }
-
-// interface DemoModalProps {
-//   showDemoForm: boolean;
-//   setShowDemoForm: (show: boolean) => void;
-//   demoForm: DemoRequestForm;
-//   setDemoForm: (form: DemoRequestForm) => void;
-//   handleDemoSubmit: (e: React.FormEvent) => void;
-// }
-
-// export function DemoModal({ 
-//   showDemoForm, 
-//   setShowDemoForm, 
-//   demoForm, 
-//   setDemoForm, 
-//   handleDemoSubmit 
-// }: DemoModalProps) {
-//   if (!showDemoForm) return null;
-
-//   return (
-//     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center px-4 py-6 z-50">
-//       <div className="bg-white rounded-xl p-6 w-full max-w-md max-h-[90vh] overflow-y-auto shadow-2xl">
-//         <h3 className="text-xl text-gray-900 mb-6 text-center">Demande de démonstration</h3>
-//         <form onSubmit={handleDemoSubmit} className="space-y-4">
-//           {/* Numéro Boutique */}
-//           <div className="flex items-center gap-3">
-//             <Store className="h-5 w-5 text-green-600" />
-//             <input
-//               type="text"
-//               required
-//               value={demoForm.numeroboutique}
-//               onChange={(e) => setDemoForm({...demoForm, numeroboutique: e.target.value})}
-//               placeholder="Numéro de la boutique"
-//               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:outline-none text-sm"
-//             />
-//           </div>
-
-//           {/* Nom Boutique */}
-//           <div className="flex items-center gap-3">
-//             <ShoppingBag className="h-5 w-5 text-green-600" />
-//             <input
-//               type="text"
-//               required
-//               value={demoForm.nomboutique}
-//               onChange={(e) => setDemoForm({...demoForm, nomboutique: e.target.value})}
-//               placeholder="Nom de la boutique"
-//               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:outline-none text-sm"
-//             />
-//           </div>
-
-//           {/* Type Boutique (Select) */}
-//           <div className="flex items-center gap-3">
-//             <Package className="h-5 w-5 text-green-600" />
-//             <select
-//               required
-//               value={demoForm.typeboutique}
-//               onChange={(e) => setDemoForm({...demoForm, typeboutique: e.target.value})}
-//               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:outline-none text-sm"
-//             >
-//               <option value="">Type de boutique</option>
-//               <option value="electronique">Électronique</option>
-//               <option value="habits">Habits</option>
-//               <option value="piecederechange">Pièce de rechange</option>
-//               <option value="jus">Jus</option>
-//               <option value="alimentation">Alimentation générale</option>
-//             </select>
-//           </div>
-
-//           {/* Adresse */}
-//           <div className="flex items-center gap-3">
-//             <MapPin className="h-5 w-5 text-green-600" />
-//             <input
-//               type="text"
-//               required
-//               value={demoForm.Adresse}
-//               onChange={(e) => setDemoForm({...demoForm, Adresse: e.target.value})}
-//               placeholder="Adresse"
-//               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:outline-none text-sm"
-//             />
-//           </div>
-
-//           {/* Contact */}
-//           <div className="flex items-center gap-3">
-//             <Phone className="h-5 w-5 text-green-600" />
-//             <input
-//               type="tel"
-//               required
-//               value={demoForm.contact}
-//               onChange={(e) => setDemoForm({...demoForm, contact: e.target.value})}
-//               placeholder="Numéro de téléphone"
-//               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:outline-none text-sm"
-//             />
-//           </div>
-
-//           {/* Email */}
-//           <div className="flex items-center gap-3">
-//             <Mail className="h-5 w-5 text-green-600" />
-//             <input
-//               type="email"
-//               required
-//               value={demoForm.email}
-//               onChange={(e) => setDemoForm({...demoForm, email: e.target.value})}
-//               placeholder="Email"
-//               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:outline-none text-sm"
-//             />
-//           </div>
-
-//           {/* WhatsApp */}
-//           <div className="flex items-center gap-3">
-//             <MessageCircle className="h-5 w-5 text-green-600" />
-//             <input
-//               type="tel"
-//               required
-//               value={demoForm.whatsapp}
-//               onChange={(e) => setDemoForm({...demoForm, whatsapp: e.target.value})}
-//               placeholder="Numéro WhatsApp"
-//               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:outline-none text-sm"
-//             />
-//           </div>
-
-//           {/* Boutons */}
-//           <div className="flex flex-col md:flex-row gap-4 pt-4">
-//             <button
-//               type="submit"
-//               className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition font-semibold text-base shadow-md"
-//             >
-//               Envoyer
-//             </button>
-//             <button
-//               type="button"
-//               onClick={() => setShowDemoForm(false)}
-//               className="w-full bg-gray-200 text-gray-700 py-3 rounded-lg hover:bg-gray-300 transition font-semibold text-base"
-//             >
-//               Annuler
-//             </button>
-//           </div>
-//         </form>
-//       </div>
-//     </div>
-//   );
-// }
