@@ -20,84 +20,84 @@
         description: "Suivez vos ventes, revenus et bénéfices en temps réel.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         category: "Tableau de Bord",
-        thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg",
+        thumbnail: "utilisateur1.jpg",
       },
       {
         title: "Point de Vente : Interface Intuitive",
         description: "Utilisez le PDV avec remises et taxes.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         category: "Point de Vente",
-        thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg",
+        thumbnail: "utilisateur1.jpg",
       },
       {
         title: "Gestion des Produits : Ajout et Exportation",
         description: "Ajoutez et exportez vos produits facilement.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         category: "Gestion des Produits",
-        thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg",
+        thumbnail: "utilisateur1.jpg",
       },
       {
         title: "Devis : Création et Conversion",
         description: "Créez et convertissez des devis en ventes.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         category: "Devis",
-        thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg",
+        thumbnail: "utilisateur1.jpg",
       },
       {
         title: "Gestion des Ventes : Contrôle Total",
         description: "Gérez vos ventes et envoyez des PDF.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         category: "Gestion des Ventes",
-        thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg",
+        thumbnail: "utilisateur1.jpg",
       },
       {
         title: "Gestion des Achats : Flux Complet",
         description: "Suivez vos achats de bout en bout.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         category: "Gestion des Achats",
-        thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg",
+        thumbnail: "utilisateur1.jpg",
       },
       {
         title: "Gestion des Retours : Ventes et Achats",
         description: "Traitez les retours efficacement.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         category: "Gestion des Retours",
-        thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg",
+        thumbnail: "utilisateur1.jpg",
       },
       {
         title: "Gestion des Utilisateurs et Clients",
         description: "Gérez utilisateurs, clients et fournisseurs.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         category: "Gestion des Utilisateurs et Clients",
-        thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg",
+        thumbnail: "utilisateur1.jpg",
       },
       {
         title: "Rapports Complets : Analyse Détaillée",
         description: "Analysez vos performances avec des rapports.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         category: "Rapports Complets",
-        thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg",
+        thumbnail: "utilisateur1.jpg",
       },
       {
         title: "Paramètres du Système : Personnalisation",
-        description: "Configurez XStore selon vos besoins.",
+        description: "Configurez Istock selon vos besoins.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         category: "Paramètres du Système",
-        thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg",
+        thumbnail: "utilisateur1.jpg",
       },
       {
         title: "Fonctionnalités Supplémentaires : Multilingue",
         description: "Support multilingue et notifications.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         category: "Fonctionnalités Supplémentaires",
-        thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg",
+        thumbnail: "utilisateur1.jpg",
       },
       {
-        title: "Pourquoi Choisir XStore : Avantages",
+        title: "Pourquoi Choisir IStock : Avantages",
         description: "Les raisons de choisir IStock.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        category: "Pourquoi Choisir XStore",
-        thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg",
+        category: "Pourquoi Choisir Istock",
+        thumbnail: "utilisateur1.jpg",
       },
     ];
 
@@ -114,7 +114,7 @@
       'Rapports Complets',
       'Paramètres du Système',
       'Fonctionnalités Supplémentaires',
-      'Pourquoi Choisir XStore',
+      'Pourquoi Choisir Istock',
     ];
 
     // Filtrage des tutoriels
@@ -179,7 +179,7 @@
                   <div className="p-4">
                     <h3 className="text-base md:text-lg font-semibold text-gray-900 line-clamp-2">{tutorial.title}</h3>
                     <p className="text-xs md:text-sm text-gray-600 mt-1 line-clamp-2">{tutorial.description}</p>
-                    <p className="text-xs text-gray-500 mt-2">XStore Tutorials</p>
+                    <p className="text-xs text-gray-500 mt-2">Istock Tutorials</p>
                   </div>
                 </a>
               ))
