@@ -80,7 +80,7 @@
       },
       {
         title: "Paramètres du Système : Personnalisation",
-        description: "Configurez Istock selon vos besoins.",
+        description: "Configurez xstore selon vos besoins.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         category: "Paramètres du Système",
         thumbnail: "utilisateur1.jpg",
@@ -93,10 +93,10 @@
         thumbnail: "utilisateur1.jpg",
       },
       {
-        title: "Pourquoi Choisir IStock : Avantages",
-        description: "Les raisons de choisir IStock.",
+        title: "Pourquoi Choisir xstore : Avantages",
+        description: "Les raisons de choisir xstore.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        category: "Pourquoi Choisir Istock",
+        category: "Pourquoi Choisir xstore",
         thumbnail: "utilisateur1.jpg",
       },
     ];
@@ -114,7 +114,7 @@
       'Rapports Complets',
       'Paramètres du Système',
       'Fonctionnalités Supplémentaires',
-      'Pourquoi Choisir Istock',
+      'Pourquoi Choisir xstore',
     ];
 
     // Filtrage des tutoriels
@@ -179,7 +179,7 @@
                   <div className="p-4">
                     <h3 className="text-base md:text-lg font-semibold text-gray-900 line-clamp-2">{tutorial.title}</h3>
                     <p className="text-xs md:text-sm text-gray-600 mt-1 line-clamp-2">{tutorial.description}</p>
-                    <p className="text-xs text-gray-500 mt-2">Istock Tutorials</p>
+                    <p className="text-xs text-gray-500 mt-2">xstore Tutorials</p>
                   </div>
                 </a>
               ))

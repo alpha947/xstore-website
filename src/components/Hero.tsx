@@ -77,7 +77,7 @@ export function Hero({ setShowDemoForm }: HeroProps) {
         {/* Texte */}
         <div className="space-y-0 text-center md:text-left"> {/* Augmentation du space-y */}
           <h2 className="text-xl md:text-5xl lg:text-6xl text-center mb-4 leading-tight md:mb-10">  
-            Connectez vos boutiques avec <span className="text-green-600 font-extrabold tracking-wide">Istock</span>
+            Connectez vos boutiques avec <span className="text-green-600 font-extrabold tracking-wide">xstore</span>
           </h2>
         </div>
 

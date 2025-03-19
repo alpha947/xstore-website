@@ -16,7 +16,7 @@ export function TestimonialsSection() {
                 <p className="text-sm text-gray-600">Directrice, Conakry Retail</p>
               </div>
             </div>
-            <p className="text-gray-600">"Istock a transformé notre gestion de stock. Nous avons réduit nos pertes de 30% en seulement 3 mois !"</p>
+            <p className="text-gray-600">"xstore a transformé notre gestion de stock. Nous avons réduit nos pertes de 30% en seulement 3 mois !"</p>
           </div>
           {/* Ajoutez d'autres témoignages */}
         </div>

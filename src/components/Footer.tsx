@@ -10,7 +10,7 @@ export function Footer() {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <Store className="h-8 w-8" />
-              <span className="text-2xl font-bold">IStock</span>
+              <span className="text-2xl font-bold">xstore</span>
             </div> 
             <div className="flex items-center gap-2 text-green-400">
               <Clock className="h-5 w-5" />
